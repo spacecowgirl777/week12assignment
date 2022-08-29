@@ -9,23 +9,69 @@
     <link rel="stylesheet" href="style.css"
 </head>
 <body class="container">
-    <div id="search" class="jumbotron">
-        <h2>Find Drink</h2><br>
-        <input type="text" id="ingredient-name" class="form-control"><br>
-        <button id="find-drink" class="btn btn-dark form-control">Search</button>
-        <ul>
-            <a href=""></a>
-        </ul>
+    <div class="left">
+        <div id="search" class="jumbotron">
+            <button id="create-drink" class="btn btn-dark">Make New Drink</button>
+            <h4>or</h4>
+            <h3>Find Drink</h3>
+            <input type="text" id="ingredient-name" class="form" placeholder="ingredient"><br>
+            <button id="find-drink" class="btn btn-dark">Search</button>
+            <ul id="searching"></ul>
+        </div>
+
+        <div class="modal modal-backdrop-bg-dark" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <form class="modal-content">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="putDrinkName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="putDrinkName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="putDrinkIngredients" class="form-label">Ingredients</label>
+                            <input type="text" class="form-control" id="putDrinkIngredients">
+                        </div>
+                        <div class="mb-3">
+                            <label for="putDrinkInstructions" class="form-label">Instructions</label>
+                            <input type="text" class="form-control" id="putDrinkInstructions">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="submitter" type="button" class="btn btn-dark">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <div id="app">
-
+    <div class="right">
+        
+        <div id="app">
+        </div>
     </div>
-
+    <div class="modal modal-backdrop-bg-dark" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header"><br><br>
+            </div>
+            <div class="modal-body">
+                <ul id="modal-list"></ul>
+                <p class="drink-instructions"></p><br>
+              <button type="button" class="btn btn-primary" id="drink-from-list">Create Drink</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal modal-backdrop-bg-dark" id="optionsModal" tabindex="-1" role="dialog" aria-labelledby="optionsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+                <button type="button" id="updator" class="btn btn-alert">Update</button><br>
+                <button type="button" id="deletor" class="btn btn-warning">Delete</button>
+        </div>
+      </div>
+    </div>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="main.js"></script>
-
-    
 </body>
 </html>
